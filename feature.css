@@ -1,59 +1,17 @@
+.features {
+  background: linear-gradient(to right, #9c27b0, #8ecdff);
+}
 * {box-sizing: border-box;}
 
-
-.camera {
-  display: grid;
-  justify-content: center;
-  border-radius: 36px;
-  position: relative;
-  margin-top: 60px;
-  border: 1px;
-  border-radius: 36px;
-  background-color: lightblue;
-}
-.main-camera-img {
-  width: 1000px;
-  
-  
-}
-.camera-heading {
-  position: absolute;
-  top: 15px;
-  left: 15%;
-  font-family: Roboto, Arial;
-  font-size: 60px;
-  font-weight: 500;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .camera-slideshow-container {
-  background: linear-gradient(to right, #9c27b0, #8ecdff);
+  max-width: 1000px;
   position: relative;
-  margin-top: 20px; 
- 
+  margin: auto;
 }
 
+.mySlides {
+  display: none;
+}
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -63,6 +21,7 @@
   padding: 16px;
   color: white;
   font-weight: bold;
+  font-size: 25px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -74,49 +33,14 @@
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
-
-.camera-h3 {
-  color: white;
-  position: absolute;
-  bottom: 5px;
-  width: 100%;
-  text-align: center;
-}
-.camera-h4 {
-  color: white;
-  position: absolute;
-  left: 150px;
-  width: 100%;
-  text-align:justify;
-}
-.camera-h5 {
-  color: white;
-  position: absolute;
-  right: 5px;
-  width: 100%;
-  text-align: center;
-}
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.active, .dot:hover {
-  background-color: #717171;
+.active {
+  background-color: #8ecdff;
 }
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 5s;
 }
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+  from {opacity: .4;}
+  to {opacity: 1;}
 }
