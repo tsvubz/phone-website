@@ -1,0 +1,40 @@
+* {box-sizing: border-box;}
+
+.reviews
+{
+  background: linear-gradient(to right, #9c27b0, #8ecdff);
+}
+.review-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  justify-content: space-around;
+  margin: auto;
+  
+}
+.review-item {
+  display: inline-block;
+  text-align: center;
+}
+
+.review-pic {
+  border-radius: 50%;
+  justify-self: center;
+}
+@media (max-width: 750px) {
+  .review-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {
+  .review-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .review-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
