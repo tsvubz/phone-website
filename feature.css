@@ -1,3 +1,6 @@
-.features {
+.features, .phone-video {
   background: linear-gradient(to right, #9c27b0, #8ecdff);
+}
+.phone-video {
+  margin-bottom: -50px;
 }

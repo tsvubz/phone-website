@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <link rel="stylesheet" href="review.css">
+    <link rel="stylesheet" href="accessories.css">
 
   </head>
   <body>
@@ -73,6 +74,14 @@
         <img src="images/arrow.png" id="downBtn">
       </div>
     </div>
+
+    <section class="phone-video">
+      <div class="container text-center">
+        <video width="800" height="600" controls autoplay>
+          <source src="phone/Introducing iPhone 14 Pro _ Apple.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
     
     <section class="features">
       
@@ -108,6 +117,61 @@
       </div>    
     </section>
 
+    <section class="accesories">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div><h1>Power & Cables</h1></div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/MHXH3.png" alt="">
+          <div class="text">MagSafe Charger</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/MU7T2_GEO_US.png" alt="">
+          <div class="text">20W USB-C Power Adapter</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/MHXF3.png" alt="">
+          <div class="text">MagSafe Duo Charger</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/MNWP3.png" alt="">
+          <div class="text">35W Dual USB-C Port Power Adapter</div>
+        </div>
+        <div class="mySlides fade">
+          <div><h1>Sound</h1></div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/compare_airpods_2nd_gen__fw52r8rxrpyu_large.png" alt="">
+          <div class="text">AirPods 2nd Generation</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/compare_airpods_3rd_gen__dyuzfy04ht0m_large.png" alt="">
+          <div class="text">AirPods 3rd Generation</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/compare_airpods_max__b14s2x6q07rm_large.png" alt="">
+          <div class="text">AirPods Max</div>
+        </div>
+        <div class="mySlides fade">
+          <div><h1>Case with Magsafe</h1></div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/MPPJ3.png" alt="">
+          <div class="text">Leather Case with Magsafe-Midnight</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/MPPK3_AV3.jpg" alt="">
+          <div class="text">Leather Case with Magsafe-Umber</div>
+        </div>
+        <div class="mySlides fade">
+          <img src="accessories/MPPL3.jpg" alt="">
+          <div class="text">Leather Case with Magsafe-Orange</div>
+        </div>
+      </div>
+      <br>
+    </section>
+
     <section class="reviews">
       <h1 class="display-4 text-black-50 text-center">Everyone Loves the iPhone</h1>
       <div class="review-container">
@@ -127,7 +191,7 @@
                selfie multi-face detection. You can swim with 
                your phone and capture those deep dive moments"
             </p>
-            <p class="review-name">Marques Brownlee</p>
+            <p class="review-name">Davie Jones</p>
           </div>
           <div class="review-item">
             <img class="review-pic" src="channel/channel-3.jpeg" alt="">
@@ -136,34 +200,35 @@
               quick swipe response and open Apps with a single tap.
               Download and install Apps in a matter of seconds"
             </p>
-            <p class="review-name">Marques Brownlee</p>
+            <p class="review-name">Olivia Dunham</p>
           </div>
           <div class="review-item">
-            <img class="review-pic" src="channel/channel-6.jpeg" alt="">
+            <img class="review-pic" src="channel/channel-4.jpg" alt="">
             <p class="review-text">
               "User friendly even my grandparents have
-               no trouble navigating the iphone."
+               no trouble navigating the iphone. Im falling 
+               in love with it by the day."
             </p>
-            <p class="review-name">Marques Brownlee</p>
+            <p class="review-name">Cherry Picker</p>
           </div>
           <div class="review-item">
-            <img class="review-pic" src="channel/channel-7.jpeg" alt="">
+            <img class="review-pic" src="channel/channel-7.jpg" alt="">
             <p class="review-text">
               "Wonderful display and and it gets the job 
               done in a matter of seconds, very attractive design. Flows
               perfectly in the hands and able to reach all sides
               with my fingers."
             </p>
-            <p class="review-name">Marques Brownlee</p>
+            <p class="review-name">Walter Bishop</p>
           </div>
           <div class="review-item">
-            <img class="review-pic" src="channel/channel-5.jpeg" alt="">
+            <img class="review-pic" src="channel/channel-9.jpg" alt="">
             <p class="review-text">
               "You can chat with friends and family all day, with
               Facetime, Messages and WhatsApp with a 
               battery which lasts all day long."
             </p>
-            <p class="review-name">Marques Brownlee</p>
+            <p class="review-name">Nina Sharp</p>
           </div>      
       </div>
     </section>
@@ -192,6 +257,20 @@
         rotateValue = rotateSum
       }
 
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 2000);
+      }
     </script>
   </body>
 </html>
