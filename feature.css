@@ -4,3 +4,22 @@
 .phone-video {
   margin-bottom: -50px;
 }
+.processor-heading {
+  font-family: Roboto, Arial;
+  font-weight: 700;
+  font-size: 36px;
+  margin-left: 30px;
+}
+.processor-container {
+  display: grid;
+  margin-top: 35px;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 25px;
+  column-gap: 40px;
+  padding: 25px;
+  
+}
+.processor-text {
+  font-family: Roboto, Arial;
+}
+

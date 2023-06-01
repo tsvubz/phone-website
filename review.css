@@ -10,7 +10,7 @@
   column-gap: 20px;
   justify-content: space-around;
   margin: auto;
-  
+  padding: 20px;
 }
 .review-item {
   display: inline-block;
@@ -20,6 +20,9 @@
 .review-pic {
   border-radius: 50%;
   justify-self: center;
+}
+.review-text {
+  font-family: Roboto, Arial;
 }
 @media (max-width: 750px) {
   .review-container {
