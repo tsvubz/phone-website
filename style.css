@@ -126,3 +126,12 @@ nav{
   left: 0;
   top: 0;
 }
+.dropdown-item {
+  
+  color: white;
+}
+.dropdown-menu {
+  background: linear-gradient(to right, #9c27b0, #8ecdff);
+  border: none;
+  border-style: solid;
+}
