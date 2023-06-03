@@ -19,7 +19,13 @@
   padding: 25px;
   
 }
+
 .processor-text {
   font-family: Roboto, Arial;
+  font-size: 24px;
 }
 
+.batt-img {
+  border-radius: 46px;
+  height: 150px;
+}
