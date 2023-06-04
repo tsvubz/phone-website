@@ -4,7 +4,7 @@
 {
   background: linear-gradient(to right, #9c27b0, #8ecdff);
 }
-.review-container {
+.review-container, .cart-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 20px;
@@ -12,7 +12,7 @@
   margin: auto;
   padding: 20px;
 }
-.review-item {
+.review-item, .cart-item {
   display: inline-block;
   text-align: center;
 }
@@ -21,7 +21,12 @@
   border-radius: 50%;
   justify-self: center;
 }
-.review-text {
+.cart-pic {
+  border-radius: 15px;
+  width: 30%;
+  justify-self: center;
+}
+.review-text, .cart-text {
   font-family: Roboto, Arial;
 }
 @media (max-width: 750px) {
