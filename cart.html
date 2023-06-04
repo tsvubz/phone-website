@@ -4,19 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="review.css">
+  <link rel="stylesheet" href="cart.css">
 
   <title>Phone Cart</title>
 </head>
- <body>
+ <body class="cart">
 
-  <div>
-    <p>Cost of iPhone:</p>
+  <section id="cart">
+  <div class="cart-buy">
+    <p>Cost of iPhone:</p> 
     <p class="js-iphone-cost"></p>
     <p>Cost of Accessories:</p>
+    
     <p class="js-accessories-cost"></p>
+    <button onclick="
+    phone = 0;
+    document.querySelector('.js-iphone-cost')
+     .innerHTML = `$${phone}`;
+    ">Reset Phone</button>
+    <button onclick="
+    accOne = 0;
+    document.querySelector('.js-accessories-cost')
+     .innerHTML = `$${accOne}`;
+    ">Reset Accesories</button>
+    <p>Orders under $150 = +$20 shipping. </p>
+    <p>Orders over $150 = Free shipping.</p>
 
-
+    <button onclick="costTotal();">Total Cost</button>
+    
+    <p class="js-cost"></p>
+    
+    <button onclick="
+     bought();
+    "class="js-buy-button">Buy</button>
   </div>
 
 
@@ -199,6 +223,7 @@
       </div> 
          
     </div>
+    </section>
 
 
 
@@ -206,17 +231,33 @@
   <script>
     let phone = 0;
     let accOne = 0;
-    let accTwo = 0;
-    let accThree = 0;
-    let accFour = 0;
-    let accFive = 0;
-    let accSix = 0;
-    let accSeven = 0;
-    let accEight = 0;
-    let accNine = 0;
-    let accTen = 0;
     
+    function costTotal() {
+      const textElement = document.querySelector('.js-accessories-cost, .js-iphone-cost');
+      let cost = Number(textElement.value);
 
+      cost = phone + accOne;
+
+      if (cost < 150) {
+        cost = cost + 20;
+      } else {
+        cost = cost;
+      }
+
+      document.querySelector('.js-cost')
+        .innerHTML = `$${cost}`;
+    }
+
+    function bought() {
+        const buttonElement = document.querySelector('.js-buy-button');
+
+        if (buttonElement.innerText === 'Buy') {
+          buttonElement.innerHTML = 'Bought';
+        } else {
+          buttonElement.innerHTML = 'Buy';
+        }
+      }
+    
     
   </script>
  </body>

@@ -1,0 +1,25 @@
+* {box-sizing: border-box;}
+
+.cart {
+  background: linear-gradient(to right, #9c27b0, #8ecdff);
+}
+
+button {
+  font-family: Roboto, Arial;
+  font-size: 18px;
+  
+  border: none;
+  
+}
+p {
+  font-family: Roboto, Arial;
+  font-size: 16px;
+  
+}
+.cart-buy {
+  margin-left: 60px;
+}
+.js-iphone-cost, .js-accessories-cost, .js-cost {
+  color: white;
+  opacity: 0.8;
+}
