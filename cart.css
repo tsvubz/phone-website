@@ -4,13 +4,42 @@
   background: linear-gradient(to right, #9c27b0, #8ecdff);
 }
 
+.cart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  justify-content: space-around;
+  margin: auto;
+  padding: 20px;
+}
+.cart-item {
+  display: inline-block;
+  text-align: center;
+}
+.cart-pic {
+  border-radius: 15px;
+  width: 30%;
+  justify-self: center;
+}
+.cart-text {
+  font-family: Roboto, Arial;
+}
+
 button {
   font-family: Roboto, Arial;
   font-size: 18px;
-  
+  border-radius: 20px;
   border: none;
+  padding: 10px;
+  background-color: rgba(132, 0, 255, 0.74);
+  transition: 1s;
+  cursor: pointer;
   
 }
+button:hover {
+  background-color: plum;
+}
+
 p {
   font-family: Roboto, Arial;
   font-size: 16px;
@@ -22,4 +51,21 @@ p {
 .js-iphone-cost, .js-accessories-cost, .js-cost {
   color: white;
   opacity: 0.8;
+}
+@media (max-width: 750px) {
+  .cart-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {
+  .cart-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cart-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

@@ -1,264 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="review.css">
-  <link rel="stylesheet" href="cart.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="review.css">
+    <link rel="stylesheet" href="cart.css">
 
-  <title>Phone Cart</title>
-</head>
- <body class="cart">
+    <script src="cart.js"></script>
 
-  <section id="cart">
-  <div class="cart-buy">
-    <p>Cost of iPhone:</p> 
-    <p class="js-iphone-cost"></p>
-    <p>Cost of Accessories:</p>
-    
-    <p class="js-accessories-cost"></p>
-    <button onclick="
-    phone = 0;
-    document.querySelector('.js-iphone-cost')
-     .innerHTML = `$${phone}`;
-    ">Reset Phone</button>
-    <button onclick="
-    accOne = 0;
-    document.querySelector('.js-accessories-cost')
-     .innerHTML = `$${accOne}`;
-    ">Reset Accesories</button>
-    <p>Orders under $150 = +$20 shipping. </p>
-    <p>Orders over $150 = Free shipping.</p>
+    <title>Phone Cart</title>
+  </head>
+  <body class="cart">
 
-    <button onclick="costTotal();">Total Cost</button>
-    
-    <p class="js-cost"></p>
-    
-    <button onclick="
-     bought();
-    "class="js-buy-button">Buy</button>
-  </div>
-
-
-    <div class="cart-container">
-      <div class="cart-item">
-        <img class="cart-pic" src="accessories/compare_iphone_14_pro__dny32075a7ki_large.jpg" alt="">
-        <p class="cart-text">
-          iPhone $100
-        </p>
+    <section id="cart">
+      <div class="cart-buy">
+        <p>Cost of iPhone:</p> 
+        <p class="js-iphone-cost"></p>
+        <p>Cost of Accessories:</p>
+        
+        <p class="js-accessories-cost"></p>
         <button onclick="
-          phone += 100;
-          document.querySelector('.js-iphone-cost')
-            .innerHTML = `$${phone}`;
-          ">Add</button>
+        phone = 0;
+        document.querySelector('.js-iphone-cost')
+        .innerHTML = `$${phone}`;
+        ">Reset Phone</button>
         <button onclick="
-          phone -= 100;
-          document.querySelector('.js-iphone-cost')
-            .innerHTML = `$${phone}`;
-          ">Remove</button>
+        accOne = 0;
+        document.querySelector('.js-accessories-cost')
+        .innerHTML = `$${accOne}`;
+        ">Reset Accesories</button>
+        <p>Orders under $150 = +$20 shipping. </p>
+        <p>Orders over $150 = Free shipping.</p>
+
+        <button onclick="costTotal();">Total Cost</button>
+        
+        <p class="js-cost"></p>
+        
+        <button onclick="
+        bought();
+        "class="js-buy-button">Buy</button>
       </div>
-      <div class="cart-item">
-        <img class="cart-pic" src="accessories/MHXH3.png" alt="">
-        <p class="cart-text">
-          MagSafe Charger $15
-        </p>
-        <button onclick="
+
+
+      <div class="cart-container">
+        <div class="cart-item">
+          <img class="cart-pic" src="accessories/compare_iphone_14_pro__dny32075a7ki_large.jpg" alt="">
+          <p class="cart-text">
+            iPhone $100
+          </p>
+          <button onclick="
+            phone += 100;
+            document.querySelector('.js-iphone-cost')
+              .innerHTML = `$${phone}`;
+            ">Add</button>
+          <button onclick="
+            phone -= 100;
+            document.querySelector('.js-iphone-cost')
+              .innerHTML = `$${phone}`;
+            ">Remove</button>
+        </div>
+        <div class="cart-item">
+          <img class="cart-pic" src="accessories/MHXH3.png" alt="">
+          <p class="cart-text">
+            MagSafe Charger $15
+          </p>
+          <button onclick="
+            accOne += 15;
+            document.querySelector('.js-accessories-cost')
+              .innerHTML = `$${accOne}`;
+            ">Add</button>
+          <button onclick="
+            accOne -= 15;
+            document.querySelector('.js-accessories-cost')
+              .innerHTML = `$${accOne}`;
+            ">Remove</button>
+        </div>
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/MU7T2_GEO_US.png" alt="">
+          <p class="review-text">
+            20W USB-C Power Adapter $20
+          </p>
+          <button onclick="
+          accOne += 20;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 20;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Remove</button>
+        </div>
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/MHXF3.png" alt="">
+          <p class="review-text">
+            MagSafe Duo Charger $35
+          </p>
+          <button onclick="
+          accOne += 35;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 35;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Remove</button>
+        </div>
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/MNWP3.png" alt="">
+          <p class="review-text">
+            35W Dual USB-C Port Power Adapter $40
+          </p>
+          <button onclick="
+          accOne += 40;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 40;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Remove</button>
+        </div>
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/compare_airpods_2nd_gen__fw52r8rxrpyu_large.png" alt="">
+          <p class="review-text">
+            AirPods 2nd Generation $25
+          </p>
+          <button onclick="
+          accOne += 25;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 25;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`; 
+          ">Remove</button>
+        </div>
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/compare_airpods_3rd_gen__dyuzfy04ht0m_large.png" alt="">
+          <p class="review-text">
+            AirPods 3rd Generation $30
+          </p>
+          <button onclick="
+          accOne += 30;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 30;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Remove</button>
+        </div>   
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/compare_airpods_max__b14s2x6q07rm_large.png" alt="">
+          <p class="review-text">
+            AirPods Max $40
+          </p>
+          <button onclick="
+          accOne += 40;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 40;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Remove</button>
+        </div> 
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/MPPJ3.png" alt="">
+          <p class="review-text">
+            Leather Case with Magsafe-Midnight $15
+          </p>
+          <button onclick="
           accOne += 15;
           document.querySelector('.js-accessories-cost')
             .innerHTML = `$${accOne}`;
           ">Add</button>
-        <button onclick="
+          <button onclick="
           accOne -= 15;
           document.querySelector('.js-accessories-cost')
             .innerHTML = `$${accOne}`;
           ">Remove</button>
+        </div> 
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/MPPJ3-1.png" alt="">
+          <p class="review-text">
+            Leather Case with Magsafe-Blursque $15
+          </p>
+          <button onclick="
+          accOne += 15;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 15;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Remove</button>
+        </div> 
+        <div class="review-item">
+          <img class="cart-pic" src="accessories/MPPJ3-2.png" alt="">
+          <p class="review-text">
+            Leather Case with Magsafe-Arctic $15
+          </p>
+          <button onclick="
+          accOne += 15;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Add</button>
+          <button onclick="
+          accOne -= 15;
+          document.querySelector('.js-accessories-cost')
+            .innerHTML = `$${accOne}`;
+          ">Remove</button>
+        </div> 
+          
       </div>
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/MU7T2_GEO_US.png" alt="">
-        <p class="review-text">
-          20W USB-C Power Adapter $20
-        </p>
-        <button onclick="
-        accOne += 20;
-        document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-        ">Add</button>
-        <button onclick="
-         accOne -= 20;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-        ">Remove</button>
-      </div>
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/MHXF3.png" alt="">
-        <p class="review-text">
-          MagSafe Duo Charger $35
-        </p>
-        <button onclick="
-        accOne += 35;
-        document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 35;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-        ">Remove</button>
-      </div>
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/MNWP3.png" alt="">
-        <p class="review-text">
-          35W Dual USB-C Port Power Adapter $40
-        </p>
-        <button onclick="
-        accOne += 40;
-        document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 40;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Remove</button>
-      </div>
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/compare_airpods_2nd_gen__fw52r8rxrpyu_large.png" alt="">
-        <p class="review-text">
-          AirPods 2nd Generation $25
-        </p>
-        <button onclick="
-         accOne += 25;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 25;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`; 
-         ">Remove</button>
-      </div>
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/compare_airpods_3rd_gen__dyuzfy04ht0m_large.png" alt="">
-        <p class="review-text">
-          AirPods 3rd Generation $30
-        </p>
-        <button onclick="
-         accOne += 30;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 30;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Remove</button>
-      </div>   
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/compare_airpods_max__b14s2x6q07rm_large.png" alt="">
-        <p class="review-text">
-          AirPods Max $40
-        </p>
-        <button onclick="
-         accOne += 40;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 40;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Remove</button>
-      </div> 
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/MPPJ3.png" alt="">
-        <p class="review-text">
-          Leather Case with Magsafe-Midnight $15
-        </p>
-        <button onclick="
-         accOne += 15;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 15;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Remove</button>
-      </div> 
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/MPPJ3-1.png" alt="">
-        <p class="review-text">
-          Leather Case with Magsafe-Blursque $15
-        </p>
-        <button onclick="
-         accOne += 15;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 15;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Remove</button>
-      </div> 
-      <div class="review-item">
-        <img class="cart-pic" src="accessories/MPPJ3-2.png" alt="">
-        <p class="review-text">
-          Leather Case with Magsafe-Arctic $15
-        </p>
-        <button onclick="
-         accOne += 15;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-         ">Add</button>
-        <button onclick="
-         accOne -= 15;
-         document.querySelector('.js-accessories-cost')
-          .innerHTML = `$${accOne}`;
-        ">Remove</button>
-      </div> 
-         
-    </div>
     </section>
 
-
-
-
-  <script>
-    let phone = 0;
-    let accOne = 0;
-    
-    function costTotal() {
-      const textElement = document.querySelector('.js-accessories-cost, .js-iphone-cost');
-      let cost = Number(textElement.value);
-
-      cost = phone + accOne;
-
-      if (cost < 150) {
-        cost = cost + 20;
-      } else {
-        cost = cost;
-      }
-
-      document.querySelector('.js-cost')
-        .innerHTML = `$${cost}`;
-    }
-
-    function bought() {
-        const buttonElement = document.querySelector('.js-buy-button');
-
-        if (buttonElement.innerText === 'Buy') {
-          buttonElement.innerHTML = 'Bought';
-        } else {
-          buttonElement.innerHTML = 'Buy';
-        }
-      }
-    
-    
-  </script>
- </body>
+  </body>
 </html>
